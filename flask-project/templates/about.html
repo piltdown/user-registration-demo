@@ -1,0 +1,15 @@
+{% if is_authenticated %}
+  {% extends "auth-base.html" %}
+{% else %}
+  {% extends "base.html" %}
+{% endif %}
+{% block title %}About{% endblock %}
+{% block content %}
+  <div style="margin-top:10px; margin-left:20px">
+    <h1>This is a sample login/registration app.</h1>
+  </div>
+  <div style="margin-top:25px; margin-left:100px">
+    <h5 style="margin-top:25px">Usage:</h5>
+    <p style="max-width:700px">To use this demo you will need a user account. You can sign up for one at the <a href='/register'>registration page</a>. After registering you will be taken to the login page and after logging in you will be directed to a page that only authenticated, registered users can access.</p>
+  </div>
+{% endblock %}

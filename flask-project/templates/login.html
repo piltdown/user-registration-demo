@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="container w-50">
+  <form action="" method="post">
+    {{ form.csrf_token }}
+    <div class="mb-3">
+      <fieldset class="form-field">
+        {{form.username.label(class="form-control-label")}}
+        {{form.username(class="form-control form-control-lg")}}
+        {% if form.username.errors %}
+	  	  <ul class="errors">
+	  		  {% for error in form.username.errors %}
+				  <li style="color:red">{{ error }}</li>
+			    {% endfor %}
+		    </ul>
+        {% endif %}
+      <fieldset class="form-field">
+        {{form.password.label(class="form-control-label")}}
+        {{form.password(class="form-control form-control-lg")}}
+        {% if form.password.errors %}
+		    <ul class="errors">
+			    {% for error in form.password.errors %}
+				  <li style="color:red">{{ error }}</li>
+			    {% endfor %}
+		    </ul>
+        {% endif %}
+      </fieldset>
+      {% if has_error %}
+      <h4 style="color:red">Username or password is incorrect, please try again</h4>
+      {% endif %}
+    </div>
+    {{form.submit}}
+  </form>
+  <p>Don't have an accounter? <a href="/register">Register here.</a>
+</div>
+{% endblock %}

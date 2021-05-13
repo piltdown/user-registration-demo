@@ -1,0 +1,11 @@
+{% extends "auth-base.html" %}
+{% block title %}Authenticated{% endblock %}
+{% block content %}
+  <div style="margin-top:10px; margin-left:20px">
+    <h1 >{{user}} is authenticated and logged in</h1>
+  </div>
+  <div style="margin-top:25px; margin-left:100px">
+    <h5 style="margin-top:25px">Usage:</h5>
+    <p style="max-width:700px">This page displays when user is authenticated with the username in the title above. The navigation bar links also change depending on authentication status. You can log out with the navigation bar link above or by using <a href='/logout'>this link</a>. After logging out you will be redirected back to the login page.</p>
+  </div>
+{% endblock %}
